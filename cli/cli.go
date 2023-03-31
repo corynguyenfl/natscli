@@ -118,6 +118,8 @@ type Options struct {
 	SocksProxy string
 	// ColorScheme influence table colors and more based on ValidStyles()
 	ColorScheme string
+	// OpenFMB decoding
+	OpenFMB bool
 }
 
 // SkipContexts used during tests

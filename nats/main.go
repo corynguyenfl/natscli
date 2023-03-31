@@ -64,6 +64,7 @@ See 'nats cheat' for a quick cheatsheet of commands`
 	ncli.Flag("colors", "Sets a color scheme to use").PlaceHolder("SCHEME").Envar("NATS_COLOR").EnumVar(&opts.ColorScheme, cli.ValidStyles()...)
 	ncli.Flag("context", "Configuration context").Envar("NATS_CONTEXT").PlaceHolder("NAME").StringVar(&opts.CfgCtx)
 	ncli.Flag("trace", "Trace API interactions").UnNegatableBoolVar(&opts.Trace)
+	ncli.Flag("openfmb", "Decode message as OpenFMB").UnNegatableBoolVar(&opts.OpenFMB)
 	ncli.Flag("no-context", "Disable the selected context").UnNegatableBoolVar(&cli.SkipContexts)
 
 	log.SetFlags(log.Ltime)

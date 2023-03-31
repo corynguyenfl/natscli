@@ -27,6 +27,7 @@ import (
 	"time"
 
 	"github.com/choria-io/fisk"
+	"github.com/corynguyenfl/openfmb-go"
 	"github.com/dustin/go-humanize"
 	"github.com/nats-io/jsm.go"
 	"github.com/nats-io/nats-server/v2/server"
@@ -491,7 +492,20 @@ func printMsg(c *subCmd, msg *nats.Msg, reply *nats.Msg, ctr uint) {
 			if msg.Reply != "" {
 				fmt.Printf("[#%d] Received on %q with reply %q\n", ctr, msg.Subject, msg.Reply)
 			} else {
-				fmt.Printf("[#%d] Received on %q\n", ctr, msg.Subject)
+				if opts.OpenFMB {
+					// DECODE
+					ofmb, err := openfmb.FromNatsMessage(msg)
+					if err == nil {
+						fmt.Printf("%s\n", ofmb.ToJson())
+						return
+					} else {
+						fmt.Printf("[#%d] Error decoding Openfmb %q\n", ctr, err)
+						fmt.Printf("[#%d] Received on %q\n", ctr, msg.Subject)
+					}
+
+				} else {
+					fmt.Printf("[#%d] Received on %q\n", ctr, msg.Subject)
+				}
 			}
 		} else if c.jetStream {
 			fmt.Printf("[#%d] Received JetStream message: stream: %s seq %d / subject: %s / time: %v\n", ctr, info.Stream(), info.StreamSequence(), msg.Subject, info.TimeStamp().Format(time.RFC3339))
@@ -499,7 +513,9 @@ func printMsg(c *subCmd, msg *nats.Msg, reply *nats.Msg, ctr uint) {
 			fmt.Printf("[#%d] Received JetStream message: consumer: %s > %s / subject: %s / delivered: %d / consumer seq: %d / stream seq: %d\n", ctr, info.Stream(), info.Consumer(), msg.Subject, info.Delivered(), info.ConsumerSequence(), info.StreamSequence())
 		}
 
-		prettyPrintMsg(msg, c.headersOnly)
+		if !opts.OpenFMB {
+			prettyPrintMsg(msg, c.headersOnly)
+		}
 
 		if reply != nil {
 			if info == nil {
