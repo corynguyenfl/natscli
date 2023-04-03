@@ -2,13 +2,11 @@ module github.com/nats-io/natscli
 
 go 1.18
 
-replace github.com/corynguyenfl/openfmb-go => ../openfmb-go
-
 require (
 	github.com/AlecAivazis/survey/v2 v2.3.6
 	github.com/HdrHistogram/hdrhistogram-go v1.1.2
 	github.com/choria-io/fisk v0.4.0
-	github.com/corynguyenfl/openfmb-go v0.0.0-00010101000000-000000000000
+	github.com/corynguyenfl/openfmb-go v0.0.0-20230331144703-de956945be74
 	github.com/dustin/go-humanize v1.0.1
 	github.com/emicklei/dot v1.4.2
 	github.com/fatih/color v1.15.0
@@ -29,10 +27,8 @@ require (
 	github.com/santhosh-tekuri/jsonschema/v5 v5.2.0
 	github.com/tylertreat/hdrhistogram-writer v0.0.0-20210816161836-2e440612a39f
 	github.com/xlab/tablewriter v0.0.0-20160610135559-80b567a11ad5
-	gitlab.com/openfmb/psm/ops/protobuf/go-openfmb-ops-protobuf/v2 v2.0.0
 	golang.org/x/crypto v0.7.0
 	golang.org/x/term v0.6.0
-	google.golang.org/protobuf v1.30.0
 	gopkg.in/yaml.v3 v3.0.1
 )
 
@@ -51,9 +47,11 @@ require (
 	github.com/prometheus/client_model v0.3.0 // indirect
 	github.com/prometheus/procfs v0.9.0 // indirect
 	github.com/rivo/uniseg v0.4.4 // indirect
+	gitlab.com/openfmb/psm/ops/protobuf/go-openfmb-ops-protobuf/v2 v2.0.0 // indirect
 	golang.org/x/net v0.8.0 // indirect
 	golang.org/x/sys v0.6.0 // indirect
 	golang.org/x/text v0.8.0 // indirect
 	golang.org/x/time v0.3.0 // indirect
+	google.golang.org/protobuf v1.30.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 )

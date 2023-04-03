@@ -18,6 +18,8 @@ github.com/cespare/xxhash/v2 v2.2.0/go.mod h1:VGX0DQ3Q6kWi7AoAeZDth3/j3BFtOZR5XL
 github.com/choria-io/fisk v0.4.0 h1:V+mh3OpcmE0uBcihUA18dRJeL1J8YUCCLbZZQRa7GMY=
 github.com/choria-io/fisk v0.4.0/go.mod h1:3Rc9XxqKC4y9wBf2GfQ4ovJ1VKELAWcU0J33M/Zgjvs=
 github.com/client9/misspell v0.3.4/go.mod h1:qj6jICC3Q7zFZvVWo7KLAzC3yx5G7kyvSDkc90ppPyw=
+github.com/corynguyenfl/openfmb-go v0.0.0-20230331144703-de956945be74 h1:oICwsnCocgm3ARIIj1LqR/oNekZUCFtaYWu35Ew0Qik=
+github.com/corynguyenfl/openfmb-go v0.0.0-20230331144703-de956945be74/go.mod h1:cruYU5wBDsjaj6ydDc+CRidg2N3Bur1IwGA8peaF50g=
 github.com/creack/pty v1.1.9/go.mod h1:oKZEueFk5CKHvIhNR5MUki03XCEU+Q6VDXinZuGJ33E=
 github.com/creack/pty v1.1.17 h1:QeVUsEDNrLBW4tMgZHvxy18sKtr6VI492kBhUfhDJNI=
 github.com/creack/pty v1.1.17/go.mod h1:MOBLtS5ELjhRRrroQr9kyvTxUAFNvYEK993ew/Vr4O4=
